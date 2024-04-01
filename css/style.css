@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: black;
+    transition: all 1s ease;
+}
+
+#background {
+    position: fixed;
+    /* Define a posição fixa */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Largura de 100% */
+    height: 100%;
+    /* Altura de 100% para cobrir toda a tela */
+    overflow: hidden;
+    /* Oculta qualquer parte do vídeo que estenda além do elemento pai */
+    z-index: -1;
+    /* Define um z-index menor para garantir que o vídeo fique atrás do conteúdo */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 16px;
+    transition: all 1s ease;
+    background-color: #292c2d;
+
+}
+
+nav .logo {
+    width: 50px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 15px;
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    color: #2C5F9D;
+    text-shadow: 1px 1px 1px black;
+}
+
+nav ul li:active {
+    color: red;
+    text-shadow: 1px 1px 1px black;
+}
+
+#rede {
+    font-size: 30px;
+}
+
+
+#rede a:nth-child(1) {
+    color: white;
+}
+
+#rede a:hover {
+    color: #2C5F9D;
+    text-shadow: 1px 1px 1px black;
+}
+
+#rede a:active {
+    color: red;
+    text-shadow: 1px 1px 1px black;
+}
+
+#muted svg:hover {
+    color: #2C5F9D;
+}
+
+#muted svg:active {
+    color: red;
+}
+
+#view {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 91vh;
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    padding: 0 55px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+#home div {
+    width: 100%;
+}
+
+#home div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#home div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .logo {
+    width: 80%;
+}
+
+#home .imgView {
+    height: 60%;
+}
+
+#video_control {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 30px;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#video_control:hover .vertical-range {
+    display: flex;
+}
+
+.vertical-range {
+    transform: rotate(-90deg);
+    margin-bottom: -20px;
+    height: 46px;
+    width: 0;
+    display: none;
+}
+
+#carousel {
+    overflow: hidden;
+    /* Esconda qualquer conteúdo que estiver fora da div */
+}
+
+.button_control {
+    display: flex;
+}
+
+.button_control button {
+    color: white;
+    padding: 15px;
+    transform: skew(-10deg);
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font: bold 1rem "Mukta", sans-serif;
+    cursor: pointer;
+}
+
+.button_control button:hover {
+    box-shadow: 2px 2px 4px black;
+}
+
+.button_control button:active {
+    box-shadow: 2px 2px 4px #2C5F9D;
+}
+
+
+.button_control a {
+    width: 100%;
+    margin: 25px;
+
+}
+
+.button_control button:nth-child(1) {
+    background: red;
+}
+
+.button_control button:nth-child(2) {
+    width: 100%;
+    margin: 25px;
+    border: 2px solid #2C5F9D;
+    background: none;
+}
+
+.description {
+    margin: 25px 0;
+}
+
+.description p {
+    font-size: 18px;
+    margin: 10px 100px;
+}
+
+#story {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 55px;
+}
+
+#story p {
+    margin: 20px;
+}
+
+#story p:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#story img {
+    width: 400px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    nav,
+    #nav {
+        flex-direction: column;
+    }
+
+    nav {
+        align-items: normal;
+        height: 85px;
+    }
+
+    #home #carousel {
+        display: none;
+    }
+
+    #background {
+        left: -380px;
+    }
+
+    #mobile {
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        font-size: 30px;
+        border: 2px solid #2C5F9D;
+        padding: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+
+    #nav,
+    #rede {
+        display: none;
+    }
+
+    #view,
+    #story {
+        height: auto;
+    }
+
+
+    .description p {
+        margin: 10px auto;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    #mobile {
+        display: none;
+    }
+
+}
